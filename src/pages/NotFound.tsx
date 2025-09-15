@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Brain, Home } from "lucide-react";
+import { Home } from "lucide-react";
+import logo from "@/assets/nextingen-logo.png";
 
 const NotFound = () => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const NotFound = () => {
       <Card className="card-gradient shadow-elegant animate-bounce-in max-w-md w-full">
         <CardHeader className="text-center pb-4">
           <div className="flex justify-center mb-4">
-            <Brain className="h-16 w-16 text-primary" />
+            <img src={logo} alt="NextIn GEN Logo" className="h-16 w-16" />
           </div>
           <CardTitle className="text-4xl font-bold text-foreground">404</CardTitle>
           <p className="text-xl text-muted-foreground">Page Not Found</p>

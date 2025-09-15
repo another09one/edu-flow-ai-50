@@ -2,16 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
-  Brain, 
   Calendar, 
   Users, 
   TrendingUp, 
   Zap, 
   Shield,
   Clock,
-  BarChart3
+  BarChart3,
+  Bot
 } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
+import logo from "@/assets/nextingen-logo.png";
 
 const LandingPage = () => {
   return (
@@ -19,9 +20,9 @@ const LandingPage = () => {
       {/* Navigation */}
       <nav className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Brain className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">Edu-Flow</h1>
+          <div className="flex items-center space-x-3">
+            <img src={logo} alt="NextIn GEN Logo" className="h-10 w-10" />
+            <h1 className="text-2xl font-bold text-foreground">NextIn GEN</h1>
           </div>
           <div className="flex items-center space-x-4">
             <Link to="/login">
@@ -51,12 +52,12 @@ const LandingPage = () => {
         <div className="relative container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto animate-fade-in">
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-6">
-              AI-Powered Academic
-              <span className="block text-accent-glow">Scheduling</span>
+              Next Generation
+              <span className="block text-accent-glow">Academic Management</span>
             </h2>
             <p className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Revolutionary scheduling system that eliminates conflicts, optimizes resources, 
-              and predicts academic needs with advanced AI analytics.
+              Revolutionary AI-powered system that transforms educational scheduling, 
+              optimizes resources, and delivers predictive academic insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/login">
@@ -87,7 +88,7 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Brain,
+                icon: Bot,
                 title: "AI Conflict Resolution",
                 description: "Automatically detect and resolve scheduling conflicts before they impact your institution."
               },
@@ -189,12 +190,12 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Brain className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">Edu-Flow Scheduler</span>
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <img src={logo} alt="NextIn GEN Logo" className="h-8 w-8" />
+            <span className="text-xl font-bold text-foreground">NextIn GEN</span>
           </div>
           <p className="text-muted-foreground">
-            Revolutionizing academic management with AI-powered scheduling solutions.
+            Revolutionizing academic management with next-generation AI solutions.
           </p>
         </div>
       </footer>

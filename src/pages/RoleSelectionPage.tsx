@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { Brain, UserCog, GraduationCap, BookOpen, ArrowRight } from "lucide-react";
+import { UserCog, GraduationCap, BookOpen, ArrowRight } from "lucide-react";
+import logo from "@/assets/nextingen-logo.png";
 
 const RoleSelectionPage = () => {
   const { user, setUserRole, logout } = useAuth();
@@ -45,9 +46,9 @@ const RoleSelectionPage = () => {
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <Link to="/" className="inline-flex items-center space-x-2 text-white hover:text-accent-glow transition-colors mb-6">
-            <Brain className="h-10 w-10" />
-            <span className="text-3xl font-bold">Edu-Flow</span>
+          <Link to="/" className="inline-flex items-center space-x-3 text-white hover:text-accent-glow transition-colors mb-6">
+            <img src={logo} alt="NextIn GEN Logo" className="h-12 w-12" />
+            <span className="text-3xl font-bold">NextIn GEN</span>
           </Link>
           <h1 className="text-4xl font-bold text-white mb-4">
             Welcome, {user?.name}!

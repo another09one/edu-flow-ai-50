@@ -5,8 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { Brain, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import logo from "@/assets/nextingen-logo.png";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ const LoginPage = () => {
       if (success) {
         toast({
           title: "Login Successful",
-          description: "Welcome to Edu-Flow Scheduler!",
+          description: "Welcome to NextIn GEN!",
         });
         navigate("/role-selection");
       } else {
@@ -48,9 +49,9 @@ const LoginPage = () => {
   };
 
   const demoCredentials = [
-    { role: "Admin", email: "admin@eduflow.com", password: "admin123" },
-    { role: "Teacher", email: "teacher@eduflow.com", password: "teacher123" },
-    { role: "Student", email: "student@eduflow.com", password: "student123" }
+    { role: "Admin", email: "admin@nextingen.com", password: "admin123" },
+    { role: "Teacher", email: "teacher@nextingen.com", password: "teacher123" },
+    { role: "Student", email: "student@nextingen.com", password: "student123" }
   ];
 
   return (
@@ -58,9 +59,9 @@ const LoginPage = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center space-x-2 text-white hover:text-accent-glow transition-colors">
-            <Brain className="h-10 w-10" />
-            <span className="text-3xl font-bold">Edu-Flow</span>
+          <Link to="/" className="inline-flex items-center space-x-3 text-white hover:text-accent-glow transition-colors">
+            <img src={logo} alt="NextIn GEN Logo" className="h-12 w-12" />
+            <span className="text-3xl font-bold">NextIn GEN</span>
           </Link>
         </div>
 
@@ -68,7 +69,7 @@ const LoginPage = () => {
           <CardHeader className="text-center pb-4">
             <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
             <CardDescription>
-              Sign in to access your Edu-Flow dashboard
+              Sign in to access your NextIn GEN dashboard
             </CardDescription>
           </CardHeader>
           <CardContent>

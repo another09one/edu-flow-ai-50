@@ -19,9 +19,9 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Demo credentials
 const demoCredentials = {
-  'admin@eduflow.com': { password: 'admin123', role: 'admin' as const, name: 'Admin User' },
-  'teacher@eduflow.com': { password: 'teacher123', role: 'teacher' as const, name: 'Teacher User' },
-  'student@eduflow.com': { password: 'student123', role: 'student' as const, name: 'Student User' }
+  'admin@nextingen.com': { password: 'admin123', role: 'admin' as const, name: 'Admin User' },
+  'teacher@nextingen.com': { password: 'teacher123', role: 'teacher' as const, name: 'Teacher User' },
+  'student@nextingen.com': { password: 'student123', role: 'student' as const, name: 'Student User' }
 };
 
 export function AuthProvider({ children }: { children: ReactNode }) {

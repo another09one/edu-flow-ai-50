@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { 
-  Brain, 
   LogOut, 
   User, 
   Home,
@@ -14,6 +13,7 @@ import {
   BookOpen,
   Clock
 } from "lucide-react";
+import logo from "@/assets/nextingen-logo.png";
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -74,9 +74,9 @@ const DashboardLayout = ({ children, title, subtitle }: DashboardLayoutProps) =>
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link to="/" className="flex items-center space-x-2">
-                <Brain className="h-8 w-8 text-primary" />
-                <span className="text-2xl font-bold text-foreground">Edu-Flow</span>
+              <Link to="/" className="flex items-center space-x-3">
+                <img src={logo} alt="NextIn GEN Logo" className="h-10 w-10" />
+                <span className="text-2xl font-bold text-foreground">NextIn GEN</span>
               </Link>
               <div className="h-6 w-px bg-border" />
               <div>
