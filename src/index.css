@@ -2,56 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Edu-Flow Scheduler Design System - Vibrant Professionalism */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 220 20% 97%;  /* Light off-white grey */
+    --foreground: 210 22% 14%;  /* Dark slate grey */
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 22% 14%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 22% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Indigo */
+    --primary: 243 75% 59%;  /* Deep indigo #4f46e5 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 243 75% 69%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light variants */
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 210 22% 14%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted variants */
+    --muted: 220 15% 92%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Vibrant Teal */
+    --accent: 172 82% 40%;  /* Vibrant teal #14b8a6 */
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 172 82% 50%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Alert - Warm Fuchsia */
+    --alert: 290 83% 62%;  /* Warm fuchsia #d946ef */
+    --alert-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* System Colors */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 243 75% 59%;
+
+    /* Design System Extensions */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(220 20% 99%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--accent-glow) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -101,5 +127,144 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Glassmorphism Effect */
+  .glass {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold px-8 py-4 rounded-xl;
+    @apply hover:scale-105 hover:shadow-lg transition-all duration-300;
+    @apply active:scale-95;
+  }
+
+  /* Accent Button Variant */
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent-glow text-accent-foreground font-medium px-6 py-3 rounded-lg;
+    @apply hover:scale-105 hover:shadow-md transition-all duration-300;
+  }
+
+  /* Alert Button Variant */
+  .btn-alert {
+    @apply bg-gradient-to-r from-alert to-pink-500 text-alert-foreground font-medium px-6 py-3 rounded-lg;
+    @apply hover:scale-105 hover:shadow-md transition-all duration-300;
+  }
+
+  /* Card with subtle gradient */
+  .card-gradient {
+    @apply bg-gradient-to-br from-card to-gray-50 border border-border rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* KPI Card with glow effect */
+  .kpi-card {
+    @apply bg-gradient-to-br from-card to-gray-50 border border-border rounded-xl p-6;
+    @apply hover:shadow-lg transition-all duration-300 hover:scale-105;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Pulsing animation for conflicts */
+  .pulse-conflict {
+    @apply animate-pulse border-2 border-destructive bg-destructive/10;
+  }
+
+  /* Success flash animation */
+  .flash-success {
+    @apply animate-pulse bg-success/20 border-success;
+  }
+
+  /* Sidebar active state */
+  .sidebar-active {
+    @apply bg-accent/10 border-l-4 border-accent text-accent font-medium;
+  }
+
+  /* Status indicators */
+  .status-available {
+    @apply bg-success text-success-foreground;
+  }
+  
+  .status-busy {
+    @apply bg-warning text-warning-foreground;
+  }
+  
+  .status-leave {
+    @apply bg-muted text-muted-foreground;
+  }
+  
+  .status-maintenance {
+    @apply bg-destructive text-destructive-foreground;
+  }
+}
+
+/* Custom Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.8), 0 0 40px hsl(var(--accent) / 0.3);
   }
 }
