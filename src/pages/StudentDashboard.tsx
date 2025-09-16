@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import StudyPlanner from "@/components/student/StudyPlanner";
+import GradeTracker from "@/components/student/GradeTracker";
 import { 
   Calendar, 
   BookOpen, 
@@ -183,41 +185,17 @@ const StudentDashboard = () => {
           </Card>
         </div>
 
-        {/* Academic Progress */}
-        <Card className="card-gradient">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <TrendingUp className="mr-2 h-5 w-5 text-success" />
-              Academic Progress
-            </CardTitle>
-            <CardDescription>Your current grades and performance trends</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {gradeOverview.map((subject, index) => (
-                <div key={index} className="p-4 rounded-lg border border-border bg-card/50">
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="font-semibold text-foreground">{subject.subject}</h4>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-foreground">{subject.grade}</span>
-                      <TrendingUp className={`h-4 w-4 ${
-                        subject.trend === 'up' ? 'text-success' : 
-                        subject.trend === 'down' ? 'text-destructive' : 'text-muted-foreground'
-                      }`} />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Progress</span>
-                      <span className="font-medium text-foreground">{subject.progress}%</span>
-                    </div>
-                    <Progress value={subject.progress} className="h-2" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        {/* Study Tools Section */}
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Study Tools</h2>
+          <StudyPlanner />
+        </section>
+
+        {/* Grade Tracking Section */}
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Academic Performance</h2>
+          <GradeTracker />
+        </section>
 
         {/* Recent Updates */}
         <Card className="card-gradient">

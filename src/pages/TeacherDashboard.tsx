@@ -2,6 +2,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import InteractiveClassManager from "@/components/teacher/InteractiveClassManager";
 import { 
   Calendar, 
   Users, 
@@ -169,6 +170,12 @@ const TeacherDashboard = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Interactive Class Manager */}
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Class Management</h2>
+          <InteractiveClassManager />
+        </section>
 
         {/* Recent Activity */}
         <Card className="card-gradient">

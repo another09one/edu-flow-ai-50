@@ -3,6 +3,7 @@ import KPICards from "@/components/admin/KPICards";
 import InteractiveTimetable from "@/components/admin/InteractiveTimetable";
 import ManagementQuickView from "@/components/admin/ManagementQuickView";
 import AIPredictiveScheduler from "@/components/admin/AIPredictiveScheduler";
+import RealTimeAnalytics from "@/components/admin/RealTimeAnalytics";
 
 const AdminDashboard = () => {
   return (
@@ -40,6 +41,12 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
+
+        {/* Real-Time Analytics Section */}
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Real-Time Analytics</h2>
+          <RealTimeAnalytics />
+        </section>
       </div>
     </DashboardLayout>
   );
