@@ -8,8 +8,8 @@ import RealTimeAnalytics from "@/components/admin/RealTimeAnalytics";
 const AdminDashboard = () => {
   return (
     <DashboardLayout 
-      title="Administrator Dashboard" 
-      subtitle="AI-Powered Academic Management System"
+      title="NextIn GEN Dashboard" 
+      subtitle="AI-Powered Management Platform"
     >
       <div className="space-y-8 animate-fade-in">
         {/* KPI Overview */}
